@@ -1,7 +1,9 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* NETSESSION SCSS
+ * generate /css/screen.css
+ * and a file /css/screen.min.css
+ * have fun
+ */
+/*RESET*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -56,4 +58,100 @@ a img {
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
+}
+
+/*General*/
+body {
+  background: #FAFAFA;
+  font: 150% "Roboto", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+}
+
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 2.8em;
+  line-height: 1.6em;
+}
+@media (max-width: 960px) {
+  h1 {
+    font-size: 1.6em;
+    line-height: 1em;
+  }
+}
+
+/*NAVIGATION*/
+nav ul ul {
+  display: none;
+}
+nav ul ul li {
+  float: none;
+}
+nav li {
+  float: left;
+}
+nav li a {
+  text-decoration: none;
+  display: inline-block;
+  margin: 10px 20px 5px 0;
+  padding: 8px 10px;
+}
+nav li a:link, nav li a:visited {
+  color: #646565;
+  background: #e8e9eb;
+}
+nav li a:link:hover, nav li a:visited:hover {
+  color: black;
+}
+nav li:hover ul {
+  display: inline-block;
+  position: absolute;
+}
+
+input.toggle,
+label.toggle {
+  display: none;
+}
+
+label.toggle {
+  font-weight: 900;
+  font-size: 1.2em;
+  padding: 10px 20px;
+}
+
+@media (max-width: 960px) {
+  nav {
+    display: none;
+  }
+
+  input.toggle,
+  .toggle span {
+    display: none;
+  }
+
+  input[type=checkbox]:checked ~ nav,
+  label.toggle {
+    display: block;
+    cursor: pointer;
+  }
+
+  nav li {
+    float: none;
+  }
+  nav li:hover ul {
+    display: block;
+    position: relative;
+  }
+  nav li ul {
+    display: block;
+  }
+  nav li ul li {
+    margin-left: 20px;
+  }
+  nav li a {
+    display: block;
+    margin-left: 20px;
+  }
 }

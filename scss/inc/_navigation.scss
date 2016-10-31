@@ -1,0 +1,75 @@
+nav {
+    ul {
+        ul {
+            //second nav
+            display: none;
+            li {
+                float: none;
+            }
+        }
+    }
+    li {
+        float: left;
+        a {
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 20px 5px 0;
+            padding: 8px 10px;
+            &:link,
+            &:visited {
+                color: $dunkelgrau;
+                background: $hellgrau;
+                &:hover {
+                    color: black;
+                }
+            }
+        }
+        &:hover ul {
+            display: inline-block;
+            position: absolute;
+        }
+    }
+}
+
+input.toggle,
+label.toggle {
+    display: none;
+}
+
+label.toggle {
+    font-weight: 900;
+    font-size: 1.2em;
+    padding: 10px 20px;
+}
+
+@media (max-width: $wrapper) {
+    nav {
+        display: none;
+    }
+    input.toggle,
+    .toggle span {
+        display: none;
+    }
+    input[type=checkbox]:checked ~ nav,
+    label.toggle {
+        display: block;
+        cursor: pointer;
+    }
+    nav li {
+        float: none;
+        &:hover ul {
+            display: block;
+            position: relative;
+        }
+        ul {
+            display: block;
+            li {
+                margin-left: 20px;
+            }
+        }
+        a {
+            display: block;
+            margin-left: 20px;
+        }
+    }
+}
